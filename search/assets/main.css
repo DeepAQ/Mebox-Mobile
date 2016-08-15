@@ -1,0 +1,77 @@
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    /* make transparent link selection */
+}
+
+body {
+    -webkit-touch-callout: none;
+    /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;
+    /* prevent webkit from resizing text to fit */
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #f0f0f0;
+}
+
+header {
+    display: -webkit-flex;
+    display: flex;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    border-bottom: 2px solid #cccccc;
+}
+
+header :first-child {
+    -webkit-flex: 1;
+    flex: 1;
+    background-color: #ffffff;
+    padding-left: 60px;
+}
+
+header :last-child {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 0 15px;
+}
+
+nav {
+    background-color: #ffffff;
+    height: 35px;
+    line-height: 35px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 2px solid #cccccc;
+}
+
+#logo {
+    margin-top: 50px;
+    text-align: center;
+}
+
+#search_box {
+    display: -webkit-flex;
+    display: flex;
+    margin: 50px 20px 0 20px;
+    border: 2px solid #cccccc;
+}
+
+#search_box :first-child {
+    -webkit-flex: 1;
+    flex: 1;
+    background-color: #ffffff;
+}
+
+#search_box :last-child {
+    background-color: #2b84ff;
+    color: #ffffff;
+    padding: 10px 15px;
+}
+
+footer {
+    margin-top: 40px;
+    font-size: 14px;
+    line-height: 30px;
+    text-align: center;
+}
