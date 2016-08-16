@@ -43,7 +43,7 @@ $(function() {
     window.current_page = 0;
     load_result(key, 0);
     $(window).on('scroll', function() {
-        if ($(document).height() - $(window).height() - $(document).scrollTop() <= 5) {
+        if ($(document).height() - $(window).height() - $(document).scrollTop() <= 1) {
             if (window.current_page > 0 && !$('#loading').is(':visible') && !$('#error').is(':visible')) {
                 load_result(key, window.current_page);
             }

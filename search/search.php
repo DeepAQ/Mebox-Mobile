@@ -2,13 +2,13 @@
 <html>
 <head>
     <meta charset="UTF-8">
-<?php include 'assets/head.inc.php'; ?>
+<?php include '../assets/head.inc.php'; ?>
     <link rel="stylesheet" type="text/css" href="assets/search.css" />
     <script type="text/javascript" src="assets/search.js"></script>
     <title>资料搜索</title>
 </head>
 <body>
-<?php include 'assets/app_header.inc.php'; ?>
+<?php include '../assets/app_header.inc.php'; ?>
     <nav>
         资料搜索
     </nav>
