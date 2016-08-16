@@ -1,8 +1,3 @@
-jQuery.getParam = function (name) {
-    var r = window.location.search.substr(1).match(new RegExp("(^|&)" + name + "=([^&]*)(&|$)"));
-    if (r != null) return decodeURIComponent(r[2]); return null;
-};
-
 $(function() {
     function load_result(key, page) {
         var url = '../proxy.php?query=' + encodeURIComponent('Home/Resource/searchEx?num=10&key='+key+'&page='+page);
@@ -19,7 +14,7 @@ $(function() {
                     var item = data.result.list[key];
                     var ext = item['ext'].toUpperCase();
                     $('#results').append('\
-                    <div class="item">\
+                    <div class="item" data:id="' + item['id'] + '">\
                         <div>\
                             <div>' + item['name'] + '</div>\
                             <div><img src="http://mebox.top/Public/img/typeIcon/'+ext+'.svg" alt="'+ext+'" /></div>\
