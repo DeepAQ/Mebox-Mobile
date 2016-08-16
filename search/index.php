@@ -1,7 +1,7 @@
 <?php
 
-if (isset($_GET['key'])) {
-    include 'assets/result.html';
+if (!empty($_GET['key'])) {
+    include 'result.php';
 } else {
-    include 'assets/default.html';
+    include 'search.php';
 }

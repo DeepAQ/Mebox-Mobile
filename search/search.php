@@ -2,39 +2,27 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <meta name="format-detection" content="telephone=no" />
-    <meta name="msapplication-tap-highlight" content="no" />
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+<?php include 'assets/head.inc.php'; ?>
+    <link rel="stylesheet" type="text/css" href="assets/search.css" />
+    <script type="text/javascript" src="assets/search.js"></script>
     <title>资料搜索</title>
-    <link rel="stylesheet" type="text/css" href="assets/main.css" />
 </head>
 <body>
-    <header>
-        <section>
-            上米盒客户端，资料搜索更便捷
-        </section>
-        <section>
-            App 下载
-        </section>
-    </header>
-
+<?php include 'assets/app_header.inc.php'; ?>
     <nav>
         资料搜索
     </nav>
-
     <section id="logo">
         （此处应有 Logo）
     </section>
-
     <section id="search_box">
         <div>
-            <input type="text" />
+            <input type="text" id="input_key" title="关键字" />
         </div>
-        <div>
+        <div id="btn_search">
             资料搜索
         </div>
     </section>
-
     <footer>
         <section>
             资料找不到？发布下您的需求，让广大米友帮你找！
