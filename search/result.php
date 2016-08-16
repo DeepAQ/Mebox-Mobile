@@ -10,25 +10,23 @@
 <body>
 <?php include 'assets/app_header.inc.php'; ?>
     <nav>
-        <div>&lt;-</div>
+        <div id="btn_back">&lt;-</div>
         <div>
-            <input type="text" id="input_key" title="关键字" />
+            <form action="." method="get">
+                <input type="text" name="key" id="input_key" title="关键字" />
+            </form>
         </div>
     </nav>
     <section id="results">
-        <div class="item">
-            <div>
-                <div>微积分</div>
-                <div><img src="http://mebox.top/Public/img/typeIcon/PDF.svg" alt="pdf" /></div>
-            </div>
-            <div>
-                <div>上传者: 恋爱不如开车</div>
-                <div>评论: 8</div>
-            </div>
-        </div>
     </section>
-    <section id="loading">
+    <section id="more" class="hidden">
+        上拉加载更多 ...
+    </section>
+    <section id="loading" class="hidden">
         Loading ...
+    </section>
+    <section id="error" class="hidden">
+        没有更多资料了~
     </section>
 </body>
 </html>

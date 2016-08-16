@@ -17,7 +17,9 @@
     </section>
     <section id="search_box">
         <div>
-            <input type="text" id="input_key" title="关键字" />
+            <form action="." method="get">
+                <input type="text" name="key" id="input_key" title="关键字" />
+            </form>
         </div>
         <div id="btn_search">
             资料搜索
