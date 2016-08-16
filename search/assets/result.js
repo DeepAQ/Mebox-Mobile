@@ -31,8 +31,8 @@ $(function() {
 
     var key = $.getParam('key');
     $('#input_key').val(key);
-    $('#btn_back').on('click', function() {
-        window.history.back();
+    $('#results').on('click', '.item', function() {
+        window.location = '../detail/?id=' + $(this).attr('data:id');
     });
 
     window.current_page = 0;
