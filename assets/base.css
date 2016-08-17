@@ -20,6 +20,7 @@ body {
 input {
     outline: none;
     padding: 0;
+    vertical-align: top;
 }
 
 nav {
