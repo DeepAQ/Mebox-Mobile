@@ -1,15 +1,12 @@
 nav {
     display: -webkit-flex;
     display: flex;
-    background-color: #ffffff;
-    height: 35px;
-    line-height: 35px;
-    font-size: 16px;
-    border-bottom: 2px solid #cccccc;
 }
 
 nav > :first-child {
-    padding: 0 10px;
+    width: 13px;
+    margin: 14px 12px;
+    background: url("../../assets/back-arrow.svg") no-repeat;
 }
 
 nav > :last-child {
@@ -53,6 +50,7 @@ nav input {
 .item > :first-child > div {
     height: 24px;
     overflow: hidden;
+    word-break: break-all;
 }
 
 .item > :first-child img {
@@ -63,4 +61,6 @@ nav input {
 .item > :last-child {
     font-size: 14px;
     text-align: right;
+    margin-left: 10px;
+    white-space: nowrap;
 }

@@ -16,21 +16,19 @@
         （此处应有 Logo）
     </section>
     <section id="search_box">
-        <div>
-            <form action="." method="get">
-                <input type="text" name="key" id="input_key" title="关键字" />
-            </form>
-        </div>
+        <form action="." method="get">
+            <input type="text" name="key" id="input_key" title="关键字" />
+        </form>
         <div id="btn_search">
             资料搜索
         </div>
     </section>
     <footer>
         <section>
-            资料找不到？发布下您的需求，让广大米友帮你找！
+            资料找不到？发布您的需求，广大米友帮你找！
         </section>
         <section>
-            求资料 &gt;
+            <a>求资料 &gt;</a>
         </section>
     </footer>
 </body>

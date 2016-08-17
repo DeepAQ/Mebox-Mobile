@@ -10,7 +10,7 @@
 <body>
 <?php include '../assets/app_header.inc.php'; ?>
     <nav>
-        <div id="btn_back">&lt;-</div>
+        <div id="btn_back"></div>
         <div>
             <form action="." method="get">
                 <input type="text" name="key" id="input_key" title="关键字" />
@@ -28,5 +28,6 @@
     <section id="error" class="hidden">
         没有更多资料了~
     </section>
+    <div style="height: 50px"></div>
 </body>
 </html>

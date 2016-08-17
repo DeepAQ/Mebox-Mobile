@@ -10,7 +10,7 @@
 <body>
 <?php include '../assets/app_header.inc.php'; ?>
     <nav>
-        <div id="btn_back">&lt;-</div>
+        <div id="btn_back"></div>
         <div>资料详情</div>
     </nav>
     <section id="res_preview">
