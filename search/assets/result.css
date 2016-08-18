@@ -11,7 +11,7 @@ nav > :last-child {
     background-color: #ebe2d5;
     margin: 11px 10px 11px 0;
     padding: 0 10px;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 nav > :last-child > :first-child {
@@ -31,6 +31,7 @@ nav input {
     height: 100%;
     font-size: 14px;
     line-height: 28px;
+    color: #8d7f6d;
 }
 
 #more, #loading, #error {
@@ -44,22 +45,28 @@ nav input {
     border-bottom: 1px solid #ebe2d5;
     padding: 10px 15px;
     line-height: 24px;
+    color: #8d7f6d;
 }
 
-.item > :first-child {
+.item > :nth-child(2) {
     -webkit-flex: 1;
     flex: 1;
+    margin-left: 10px;
 }
 
-.item > :first-child > div {
+.item > :nth-child(2) > div {
     height: 24px;
     overflow: hidden;
     word-break: break-all;
 }
 
+.item > :nth-child(2) > :last-child {
+    font-size: 12px;
+}
+
 .item > :first-child img {
-    width: 40px;
-    height: 20px;
+    width: 42px;
+    height: 48px;
 }
 
 .item > :last-child {

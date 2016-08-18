@@ -2,7 +2,7 @@ $(function() {
     function load_result(key, page) {
         var url = '../proxy.php?query=' + encodeURIComponent('Home/Resource/searchEx?num=10&key='+key+'&page='+page);
         $('#loading').show();
-        $.getJSON(url, function(data, status, xhr) {
+        $.getJSON(url, function(data) {
             $('#loading').hide();
             if (!data.result || !data.result.list || data.result.list.length == 0) {
                 $('#error').show();
@@ -16,8 +16,11 @@ $(function() {
                     $('#results').append('\
                     <div class="item" data:id="' + item['id'] + '">\
                         <div>\
+                            <img src="assets/filetype/' + ext + '.png" />\
+                        </div>\
+                        <div>\
                             <div>' + item['name'] + '</div>\
-                            <div><img src="http://mebox.top/Public/img/typeIcon/'+ext+'.svg" alt="'+ext+'" /></div>\
+                            <div>' + ext + '文件 </div>\
                         </div>\
                         <div>\
                             <div>' + item['uploader'] + '</div>\

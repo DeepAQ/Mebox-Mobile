@@ -13,7 +13,7 @@
         <div id="btn_back"></div>
         <div>
             <form action="." method="get">
-                <input type="text" name="key" id="input_key" title="关键字" />
+                <input type="text" name="key" id="input_key" title="关键字" placeholder="搜索您感兴趣的优质资料" />
             </form>
             <div id="btn_search"></div>
         </div>
@@ -29,6 +29,6 @@
     <section id="error" class="hidden">
         没有更多资料了~
     </section>
-    <div style="height: 50px"></div>
+    <div style="height: 60px"></div>
 </body>
 </html>

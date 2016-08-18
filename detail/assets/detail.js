@@ -5,7 +5,7 @@ $(function() {
     }
     // fetch preview
     var preview_url = '../proxy.php?query=' + encodeURIComponent('Home/FilePreview/available?resourceId=' + id);
-    $.getJSON(preview_url, function(data, status, xhr) {
+    $.getJSON(preview_url, function(data) {
         if (data.result == 1) {
             $('#res_preview').html('<img src="http://mebox.top/Home/FilePreview/picture?resourceId='+id+'" alt="资料预览" />');
         } else {
@@ -17,7 +17,7 @@ $(function() {
     });
     // fetch detail
     var url = '../proxy.php?query=' + encodeURIComponent('Home/Resource/getResourceDetail?id=' + id);
-    $.getJSON(url, function(data, status, xhr) {
+    $.getJSON(url, function(data) {
         $('#loading').hide();
         if (!data.result) {
             window.location = '../';

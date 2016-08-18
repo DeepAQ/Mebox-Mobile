@@ -29,6 +29,7 @@ nav {
     line-height: 50px;
     font-size: 16px;
     text-align: center;
+    color: #8d7f6d;
 }
 
 #btn_back {
@@ -44,6 +45,7 @@ nav {
     position: fixed;
     bottom: 0;
     background: #f8ecdd url("app-icon.svg") no-repeat 12px center;
+    color: #8d7f6d;
 }
 
 #app_download > :first-child {
@@ -62,4 +64,5 @@ nav {
     line-height: 30px;
     border-radius: 5px;
     border: 1px solid #928370;
+    color: #928370;
 }
