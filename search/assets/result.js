@@ -20,8 +20,8 @@ $(function() {
                             <div><img src="http://mebox.top/Public/img/typeIcon/'+ext+'.svg" alt="'+ext+'" /></div>\
                         </div>\
                         <div>\
-                            <div>by: ' + item['uploader'] + '</div>\
-                            <div>评论: ' + item['commentCount'] + '</div>\
+                            <div>' + item['uploader'] + '</div>\
+                            <div>' + item['commentCount'] + '条评论</div>\
                         </div>\
                     </div>');
                 }
@@ -31,6 +31,11 @@ $(function() {
 
     var key = $.getParam('key');
     $('#input_key').val(key);
+    $('#btn_search').on('click', function() {
+        var key = $('#input_key').val().trim();
+        if (!key) return;
+        window.location = '?key=' + key;
+    });
     $('#results').on('click', '.item', function() {
         window.location = '../detail/?id=' + $(this).attr('data:id');
     });

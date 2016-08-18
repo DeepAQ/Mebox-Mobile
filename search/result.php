@@ -15,6 +15,7 @@
             <form action="." method="get">
                 <input type="text" name="key" id="input_key" title="关键字" />
             </form>
+            <div id="btn_search"></div>
         </div>
     </nav>
     <section id="results">
