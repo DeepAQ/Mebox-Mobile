@@ -12,16 +12,12 @@
     <nav>
         资料搜索
     </nav>
-    <section id="logo">
-        （此处应有 Logo）
-    </section>
+    <section id="title"></section>
     <section id="search_box">
         <form action="." method="get">
             <input type="text" name="key" id="input_key" title="关键字" placeholder="搜索优质资料" />
         </form>
-        <div id="btn_search">
-            资料搜索
-        </div>
+        <div id="btn_search"></div>
     </section>
     <footer>
         <section>

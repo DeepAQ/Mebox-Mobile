@@ -31,6 +31,11 @@ nav {
     text-align: center;
 }
 
+#btn_back {
+    width: 36px;
+    background: url("back-arrow.svg") no-repeat center;
+}
+
 #app_download {
     display: -webkit-flex;
     display: flex;
@@ -38,13 +43,13 @@ nav {
     height: 50px;
     position: fixed;
     bottom: 0;
-    background-color: #f8ecdd;
+    background: #f8ecdd url("app-icon.svg") no-repeat 12px center;
 }
 
 #app_download > :first-child {
     -webkit-flex: 1;
     flex: 1;
-    padding-left: 56px;
+    margin-left: 50px;
     line-height: 50px;
     font-size: 16px;
     letter-spacing: 1px;

@@ -3,12 +3,6 @@ nav {
     display: flex;
 }
 
-nav > :first-child {
-    width: 13px;
-    margin: 14px 12px;
-    background: url("../../assets/back-arrow.svg") no-repeat;
-}
-
 nav > :last-child {
     -webkit-flex: 1;
     flex: 1;
