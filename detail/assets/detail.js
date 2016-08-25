@@ -24,14 +24,12 @@ $(function() {
         } else {
             var result = data.result;
             $('#res_title').html(result['name']);
-            var desc = result['ext'].toUpperCase() + '文件';
-            desc += ' ' + result['size'] + 'KB';
-            desc += '  上传者：' + result['uploader'] + '<br />';
-            desc += ' ' + result['point'] + '米粒';
-            desc += ' ' + result['downloadCount'] + '次下载';
-            desc += ' ' + result['collectCount'] + '次收藏';
-            desc += ' ' + result['uploadTime'];
-            $('#res_desc').html(desc);
+            var basic = '资料大小：' + result['size'] + 'KB<br />';
+            basic += '下载所需：' + result['point'] + '米粒<br />';
+            basic += '收藏次数：' + result['collectCount'] + '<br />';
+            basic += '下载次数：' + result['downloadCount'] + '<br />';
+            $('#res_basic').html(basic);
+            $('#res_desc').html(result['description']);
             for (var key in result['tags']) {
                 $('#res_tags').append('<span>' + result['tags'][key]['name'] + '</span>');
             }

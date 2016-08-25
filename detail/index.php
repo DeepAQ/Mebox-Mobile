@@ -18,13 +18,19 @@
     <div id="res_info">
         <section id="res_title">
         </section>
+        <div>基本信息：<br /><br /></div>
+        <section id="res_basic">
+        </section>
+        <div>资料描述：<br /><br /></div>
         <section id="res_desc">
         </section>
+        <div>标签：</div>
         <section id="res_tags">
         </section>
     </div>
     <section id="loading">
         Loading ...
     </section>
+    <div style="height: 60px"></div>
 </body>
 </html>
