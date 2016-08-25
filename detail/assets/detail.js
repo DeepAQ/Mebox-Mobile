@@ -23,15 +23,43 @@ $(function() {
             window.location = '../';
         } else {
             var result = data.result;
-            $('#res_title').html(result['name']);
-            var basic = '资料大小：' + result['size'] + 'KB<br />';
-            basic += '下载所需：' + result['point'] + '米粒<br />';
+            $('#title').html(result['name']);
+            var basic = '资料大小：' + result['size'] + ' KB<br />';
+            basic += '下载所需：' + result['point'] + ' 米粒<br />';
             basic += '收藏次数：' + result['collectCount'] + '<br />';
             basic += '下载次数：' + result['downloadCount'] + '<br />';
-            $('#res_basic').html(basic);
-            $('#res_desc').html(result['description']);
+            $('#basic_info').html(basic);
+            $('#description').html(result['description']);
+            $('#comment_count').html(result['commentCount']);
             for (var key in result['tags']) {
-                $('#res_tags').append('<span>' + result['tags'][key]['name'] + '</span>');
+                $('#tags').append('<span>' + result['tags'][key]['name'] + '</span>');
+            }
+        }
+    });
+    // fetch comments
+    var comment_url = '../proxy.php?query=' + encodeURIComponent('Home/Resource/getComments?page=0&num=5&id=' + id);
+    $.getJSON(comment_url, function(data) {
+        $('#loading').hide();
+        if (data.result && data.result.length > 0) {
+            for (var key in data.result) {
+                var comment = data.result[key];
+                var head_url = comment['user']['iconUrl'];
+                if (head_url == '') {
+                    head_url = 'http://mebox.top/Public/img/user_default.png';
+                }
+                var username = comment['user']['name'];
+                if (username == '') {
+                    username = '米盒用户';
+                }
+                $('#res_comments').append('<div>\
+                    <img src="' + head_url + '" />\
+                    <div>\
+                        <div>' + username + '</div>\
+                        <div>' + comment['content'] + '</div>\
+                        <div><img src="assets/like.svg" />(' + comment['praiseCount'] + ')\
+                        <img src="assets/reply.svg">(' + comment['replyNum'] + ')</div>\
+                    </div>\
+                </div>');
             }
         }
     });

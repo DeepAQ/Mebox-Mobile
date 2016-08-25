@@ -16,18 +16,23 @@
     <section id="res_preview">
     </section>
     <div id="res_info">
-        <section id="res_title">
+        <section id="title">
         </section>
-        <div>基本信息：<br /><br /></div>
-        <section id="res_basic">
+        <div class="subtitle">基本信息：</div>
+        <section id="basic_info">
         </section>
-        <div>资料描述：<br /><br /></div>
-        <section id="res_desc">
+        <div class="subtitle">资料描述：</div>
+        <section id="description">
         </section>
-        <div>标签：</div>
-        <section id="res_tags">
+        <div class="subtitle">标签：</div>
+        <section id="tags">
         </section>
     </div>
+    <section class="subtitle">
+        共 <span id="comment_count"></span> 条评论
+    </section>
+    <section id="res_comments">
+    </section>
     <section id="loading">
         Loading ...
     </section>

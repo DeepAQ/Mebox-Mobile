@@ -32,16 +32,15 @@ nav > :last-child {
     color: #8d7f6d;
 }
 
-#res_info > div {
-    font-weight: bold;
-    margin-top: 15px;
+#res_info .subtitle {
+    margin: 15px 0;
 }
 
-#res_title {
+#title {
     font-size: 20px;
 }
 
-#res_tags > span {
+#tags > span {
     display: inline-block;
     background-color: #c3b4a0;
     color: #f5f0e9;
@@ -49,4 +48,52 @@ nav > :last-child {
     margin: 3px 10px 0 0;
     font-size: 12px;
     border-radius: 5px;
+}
+
+.subtitle {
+    margin: 30px 0 0 30px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #8d7f6d;
+}
+
+#res_comments > div {
+    display: -webkit-flex;
+    display: flex;
+    color: #8d7f6d;
+    margin: 20px;
+}
+
+#res_comments > div > img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+}
+
+#res_comments > div > div {
+    -webkit-flex: 1;
+    flex: 1;
+    margin-left: 12px;
+}
+
+#res_comments > div > div > :first-child {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#res_comments > div > div > :nth-child(2) {
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+#res_comments > div > div > :last-child {
+    font-size: 12px;
+    height: 16px;
+    line-height: 16px;
+    text-align: right;
+}
+
+#res_comments > div > div > :last-child > img {
+    width: 16px;
+    height: 16px;
 }
