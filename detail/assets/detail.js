@@ -37,7 +37,7 @@ $(function() {
         }
     });
     // fetch comments
-    var comment_url = '../proxy.php?query=' + encodeURIComponent('Home/Resource/getComments?page=0&num=5&id=' + id);
+    var comment_url = '../proxy.php?query=' + encodeURIComponent('Home/Resource/getComments?page=0&num=3&id=' + id);
     $.getJSON(comment_url, function(data) {
         $('#loading').hide();
         if (data.result && data.result.length > 0) {

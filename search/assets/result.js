@@ -1,6 +1,6 @@
 $(function() {
     function load_result(key, page) {
-        var url = '../proxy.php?query=' + encodeURIComponent('Home/Resource/searchEx?num=10&key='+key+'&page='+page);
+        var url = '../proxy.php?query=' + encodeURIComponent('Home/Search/SearchResource/?num=10&key='+key+'&page='+page);
         $('#loading').show();
         $.getJSON(url, function(data) {
             $('#loading').hide();
@@ -23,7 +23,7 @@ $(function() {
                             <div>' + ext + '文件 </div>\
                         </div>\
                         <div>\
-                            <div>' + item['uploader'] + '</div>\
+                            <div>' + item['user']['nickname'] + '</div>\
                             <div>' + item['commentCount'] + '条评论</div>\
                         </div>\
                     </div>');
