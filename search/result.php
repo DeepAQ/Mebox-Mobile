@@ -18,7 +18,16 @@
             <div id="btn_search"></div>
         </div>
     </nav>
+    <section id="toolbar">
+        <div class="btn_sort" id="HOT">热度优先</div>
+        <div class="btn_sort" id="UPLOAD_TIME">最新上传</div>
+        <div class="btn_sort" id="SCORE">评分最高</div>
+        <div id="btn_filter">筛选</div>
+    </section>
     <section id="results">
+    </section>
+    <section id="filter">
+
     </section>
     <section id="more" class="hidden">
         上拉加载更多 ...

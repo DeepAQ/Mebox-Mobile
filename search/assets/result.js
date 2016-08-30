@@ -1,6 +1,10 @@
 $(function() {
     function load_result(key, page) {
-        var url = '../proxy.php?query=' + encodeURIComponent('Home/Search/SearchResource/?num=10&key='+key+'&page='+page);
+        var param = 'num=10&key='+key+'&page='+page;
+        if (order != null) {
+            param += '&order=' + order;
+        }
+        var url = '../proxy.php?query=' + encodeURIComponent('Home/Search/SearchResource/?' + param);
         $('#loading').show();
         $.getJSON(url, function(data) {
             $('#loading').hide();
@@ -16,7 +20,7 @@ $(function() {
                     $('#results').append('\
                     <div class="item" data:id="' + item['id'] + '">\
                         <div>\
-                            <img src="assets/filetype/' + ext + '.png" />\
+                            <img src="assets/filetype/geticon.php?ext=' + ext + '" />\
                         </div>\
                         <div>\
                             <div>' + item['name'] + '</div>\
@@ -32,7 +36,17 @@ $(function() {
         });
     }
 
+    function reload_page() {
+        var new_url = '?key=' + key;
+        if (order != null) {
+            new_url += '&order=' + order;
+        }
+        window.location = new_url;
+    }
+
     var key = $.getParam('key');
+    var order = $.getParam('order');
+
     $('#input_key').val(key);
     $('#btn_search').on('click', function() {
         var key = $('#input_key').val().trim();
@@ -51,5 +65,14 @@ $(function() {
                 load_result(key, window.current_page);
             }
         }
+    });
+
+    if (order != null) {
+        $('#' + order).addClass('selected');
+    }
+    $('.btn_sort').click(function() {
+        if ($(this).hasClass('selected')) return;
+        order = $(this).attr('id');
+        reload_page();
     });
 });
