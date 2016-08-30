@@ -26,8 +26,34 @@
     </section>
     <section id="results">
     </section>
-    <section id="filter">
-
+    <section id="filter" style="display: none;">
+        <div id="filter_bg"></div>
+        <div>
+            <div>
+                <div>
+                    学校<br />
+                    <select id="select_school" disabled="disabled">
+                        <option value="">选择学校</option>
+                    </select>
+                </div>
+                <div>
+                    院系<br />
+                    <select id="select_department" disabled="disabled">
+                        <option value="">选择院系</option>
+                    </select>
+                </div>
+                <div>
+                    课程<br />
+                    <select id="select_course" disabled="disabled">
+                        <option value="">选择课程</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <div id="btn_reset">重置</div>
+                <div id="btn_confirm">确定</div>
+            </div>
+        </div>
     </section>
     <section id="more" class="hidden">
         上拉加载更多 ...

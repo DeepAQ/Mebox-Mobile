@@ -101,5 +101,78 @@ nav input {
 }
 
 #filter {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: -webkit-flex;
+    display: flex;
+}
 
+#filter_bg {
+    -webkit-flex: 1;
+    flex: 1;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+#filter > div:last-child {
+    width: 275px;
+    background-color: #fbf6f1;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+}
+
+#filter > div > div:first-child {
+    -webkit-flex: 1;
+    flex: 1;
+    padding: 30px 20px 0 20px;
+}
+
+#filter > div > div:first-child > div {
+    height: 80px;
+    font-size: 12px;
+    line-height: 24px;
+    color: #c5b39b;
+    padding-top: 15px;
+    border-bottom: 1px solid #efe5da;
+}
+
+#filter > div > div:first-child > div select {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 30px;
+    background-color: #fffcf8;
+    border: 1px solid #796c5c;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #c0ac92;
+}
+
+#filter > div > div:first-child > div select:disabled {
+    background-color: #f4ebdf;
+}
+
+#filter > div > div:last-child {
+    height: 50px;
+    line-height: 50px;
+    display: -webkit-flex;
+    display: flex;
+}
+
+#filter > div > div:last-child > div {
+    -webkit-flex: 1;
+    flex: 1;
+    text-align: center;
+    font-size: 16px;
+}
+
+#filter > div > div:last-child > div:first-child {
+    background-color: #f4ebdf;
+    color: #8d7f6d;
+}
+
+#filter > div > div:last-child > div:last-child {
+    background-color: #e68080;
+    color: #f5f0e9;
 }
