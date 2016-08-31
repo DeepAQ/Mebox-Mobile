@@ -61,6 +61,7 @@ nav input {
 #more, #loading, #error {
     text-align: center;
     line-height: 30px;
+    color: #8d7f6d;
 }
 
 .item {

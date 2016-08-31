@@ -7,7 +7,7 @@ $(function() {
         if (course && course != '') keymap.push({'type':'course','name':course});
         keymap.push({'type':'key','name':[key]});
 
-        var param = 'keymap='+JSON.stringify(keymap)+'&num=10&page='+page;
+        var param = 'keyMap='+JSON.stringify(keymap)+'&num=10&page='+page;
         if (order != null) {
             param += '&order=' + order;
         }
@@ -18,10 +18,12 @@ $(function() {
             $('#loading').hide();
             if (!data.result || !data.result.list || data.result.list.length == 0) {
                 $('#error').show();
-                $('#more').hide();
             } else {
-                $('#more').show();
-                window.current_page = page + 1;
+                if (data.result.list.length >= 10) {
+                    window.current_page = page + 1;
+                } else {
+                    $('#error').show();
+                }
                 for (var key in data.result.list) {
                     var item = data.result.list[key];
                     var ext = item['ext'].toUpperCase();
@@ -59,7 +61,6 @@ $(function() {
     var department = $.getParam('department');
     var course = $.getParam('course');
 
-
     $('#input_key').val(key);
     $('#btn_search').on('click', function() {
         var key = $('#input_key').val().trim();
@@ -81,7 +82,7 @@ $(function() {
     });
 
     // init sort
-    if (order != null) {
+    if (order && order != '') {
         $('#' + order).addClass('selected');
     }
     $('.btn_sort').click(function() {
@@ -92,55 +93,67 @@ $(function() {
 
     // init filter
     var url = '../proxy.php?query=' + encodeURIComponent('Home/School/getAllSchools');
-    $.getJSON(url, function(data) {
-        if (!data.result || data.result.length == 0) return;
-        for (var key in data.result) {
-            $('#select_school').append('<option value="' + data.result[key]['id'] + '">' + data.result[key]['name'] + '</option>');
-        }
-        $('#select_school').removeAttr('disabled');
-    });
     $('#btn_filter').click(function() {
         $('#filter').show();
     });
     $('#filter_bg').click(function() {
         $('#filter').hide();
     });
+    $.getJSON(url, function(data) {
+        if (!data.result || data.result.length == 0) return;
+        for (var key in data.result) {
+            var id = data.result[key]['id'];
+            var name = data.result[key]['name'];
+            $('#select_school').append('<option value="' + name + '" data-id="' + id + '">' + name + '</option>');
+        }
+        $('#select_school').removeAttr('disabled');
+        if (school && school != '') {
+            $("#select_school").val(school).change();
+        }
+    });
     $('#select_school').change(function() {
-        var school = $(this).val();
-        if (school == '') {
+        var selected = $(this).find(':selected').attr('data-id');
+        if (!selected) {
             $('#select_department').val('').attr('disabled', 'disabled');
             $('#select_course').val('').attr('disabled', 'disabled');
             return;
         }
         $('#select_department').html('<option value="">选择院系</option>');
-        var url = '../proxy.php?query=' + encodeURIComponent('Home/Department/getDepartmentsBySchoolId?schoolId=' + school);
+        var url = '../proxy.php?query=' + encodeURIComponent('Home/Department/getDepartmentsBySchoolId?schoolId=' + selected);
         $.getJSON(url, function(data) {
             if (!data.result || data.result.length == 0) return;
             for (var key in data.result) {
+                var id = data.result[key]['id'];
                 var name = data.result[key]['name'];
-                $('#select_department').append('<option value="' + data.result[key]['id'] + '">' + data.result[key]['name'] + '</option>');
+                $('#select_department').append('<option value="' + name + '" data-id="' + id + '">' + name + '</option>');
             }
             $('#select_department').removeAttr('disabled');
+            if (department && department != '') {
+                $("#select_department").val(department).change();
+            }
         });
     });
     $('#select_department').change(function() {
-        var department = $(this).val();
-        if (department == '') {
+        var selected = $(this).find(':selected').attr('data-id');
+        if (!selected) {
             $('#select_course').val('').attr('disabled', 'disabled');
             return;
         }
         $('#select_course').html('<option value="">选择课程</option>');
-        var url = '../proxy.php?query=' + encodeURIComponent('Home/Course/getCoursesByDepartmentIdWithGrade?departmentId=' + department);
+        var url = '../proxy.php?query=' + encodeURIComponent('Home/Course/getCoursesByDepartmentIdWithGrade?departmentId=' + selected);
         $.getJSON(url, function(data) {
             if (!data) return;
-            console.log(data);
             for (var key in data) {
                 for (var key2 in data[key]) {
+                    var id = data[key][key2]['id'];
                     var name = data[key][key2]['name'];
-                    $('#select_course').append('<option value="' + data[key][key2]['id'] + '">' + data[key][key2]['name'] + '</option>');
+                    $('#select_course').append('<option value="' + name + '" data-id="' + id + '">' + name + '</option>');
                 }
             }
             $('#select_course').removeAttr('disabled');
+            if (course && course != '') {
+                $("#select_course").val(course);
+            }
         });
     });
     $('#btn_reset').click(function() {
@@ -149,21 +162,9 @@ $(function() {
         $('#select_course').val('').attr('disabled', 'disabled');
     });
     $('#btn_confirm').click(function() {
-        if ($('#select_school').val() == '') {
-            school = department = course = '';
-        } else {
-            school = $('#select_school').find(':selected').html();
-            if ($('#select_department').val() == '') {
-                department = course = '';
-            } else {
-                department = $('#select_department').find(':selected').html();
-                if ($('#select_course').val() == '') {
-                    course = '';
-                } else {
-                    course = $('#select_course').find(':selected').html();
-                }
-            }
-        }
+        school = $('#select_school').val();
+        department = $('#select_department').val();
+        course = $('#select_course').val();
         order = '';
         reload_page();
     });
