@@ -19,7 +19,7 @@
         </form>
         <div id="btn_search"></div>
     </section>
-    <footer>
+    <footer class="hidden">
         <section>
             资料找不到？发布您的需求，广大米友帮你找！
         </section>

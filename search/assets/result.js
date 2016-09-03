@@ -13,6 +13,7 @@ $(function() {
         }
 
         var url = '../proxy.php?query=' + encodeURIComponent('Home/Search/SearchResource/?' + param);
+        $('#more, #error').hide();
         $('#loading').show();
         $.getJSON(url, function(data) {
             $('#loading').hide();
@@ -21,6 +22,7 @@ $(function() {
             } else {
                 if (data.result.list.length >= 10) {
                     window.current_page = page + 1;
+                    $('#more').show();
                 } else {
                     $('#error').show();
                 }
@@ -74,7 +76,7 @@ $(function() {
     window.current_page = 0;
     load_result(key, 0);
     $(window).on('scroll', function() {
-        if ($(document).height() - $(window).height() - $(document).scrollTop() <= 1) {
+        if ($(document).height() - $(window).height() - $(document).scrollTop() <= 10) {
             if (window.current_page > 0 && !$('#loading').is(':visible') && !$('#error').is(':visible')) {
                 load_result(key, window.current_page);
             }

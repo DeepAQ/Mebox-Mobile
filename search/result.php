@@ -56,7 +56,7 @@
         </div>
     </section>
     <section id="more" class="hidden">
-        上拉加载更多 ...
+        松手加载更多 ...
     </section>
     <section id="loading" class="hidden">
         Loading ...
@@ -64,6 +64,6 @@
     <section id="error" class="hidden">
         没有更多资料了~
     </section>
-    <div style="height: 60px"></div>
+    <div style="height: 50px"></div>
 </body>
 </html>
