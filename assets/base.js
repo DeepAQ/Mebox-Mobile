@@ -7,4 +7,8 @@ $(function() {
     $('#btn_back').on('click', function() {
         window.history.back();
     });
+
+    $('#btn_app_download').click(function() {
+        window.location = 'http://mebox.top/weixin/app-download';
+    });
 });
